@@ -7,7 +7,7 @@ const Users = ({ users }) => {
           <div className="user-details">
             <h2 className="user-name">{user.name}</h2>
             <h3 className="user-email">{user.email}</h3>
-            <h4 className="user-company">Company: {user.company.name}</h4>
+            <h4 className="user-company">Company Name: {user.company.name}</h4>
             <hr/>
           </div>
         </div>
