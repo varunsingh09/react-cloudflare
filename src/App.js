@@ -1,25 +1,25 @@
-import {Component} from 'react';
+import { useEffect, useState } from 'react';
 import Users from './components/users';
 
-class App extends Component {
-  state = {
+const App = () => {
+  const [state, setState] = useState({
     users: []
-  };
+  });
 
-  componentDidMount() {
+  useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then((data) => {
-        this.setState({ users: data })
+        setState({ users: data })
       })
       .catch(console.log)
-  }
+  }, []);
 
-  render() {
-    return (
-      <Users users={this.state.users} />
-    )
-  }
+
+  return (
+    <Users users={state.users} />
+  )
+
 }
 
 export default App;
